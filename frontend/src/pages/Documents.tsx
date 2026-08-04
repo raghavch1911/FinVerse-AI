@@ -36,7 +36,7 @@ export default function Documents() {
 const [detectedTransactions, setDetectedTransactions] =
   useState<any[]>([]);
 
-  const [documentId, setDocumentId] =
+  const [, setDocumentId] =
   useState<number | null>(null);
 
 const [importing, setImporting] =
