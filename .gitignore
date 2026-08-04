@@ -13,6 +13,7 @@ frontend/.env
 
 # Uploads
 backend/uploads/
+backend/chroma_db/
 
 # Logs
 *.log
