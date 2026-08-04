@@ -59,6 +59,7 @@ torch
 # ===========================
 # OCR & Document Processing
 # ===========================
+pandas
 easyocr
 pymupdf
 pypdf
