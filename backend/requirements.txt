@@ -1,0 +1,68 @@
+# ===========================
+# FastAPI
+# ===========================
+fastapi==0.140.0
+uvicorn==0.51.0
+gunicorn
+
+# ===========================
+# Database
+# ===========================
+SQLAlchemy==2.0.51
+alembic==1.18.5
+psycopg2-binary==2.9.12
+
+# ===========================
+# Authentication & Security
+# ===========================
+python-jose==3.5.0
+passlib==1.7.4
+bcrypt==4.0.1
+python-multipart==0.0.32
+
+# ===========================
+# Validation
+# ===========================
+pydantic==2.13.4
+email-validator==2.3.0
+
+# ===========================
+# Environment
+# ===========================
+python-dotenv==1.2.2
+
+# ===========================
+# LangChain / LangGraph
+# ===========================
+langchain
+langchain-core
+langgraph
+langchain-community
+
+# ===========================
+# Google Gemini
+# ===========================
+langchain-google-genai
+
+# ===========================
+# Vector Database
+# ===========================
+chromadb
+
+# ===========================
+# Document Processing
+# ===========================
+pypdf
+openpyxl
+sentence-transformers==5.1.0
+torch
+easyocr
+pymupdf
+pillow
+
+# ===========================
+# Utilities
+# ===========================
+typing_extensions==4.16.0
+click==8.4.2
+colorama==0.4.6
