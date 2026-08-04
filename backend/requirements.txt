@@ -42,6 +42,7 @@ langgraph
 langchain-openai
 langchain-groq
 langchain-google-genai
+langchain-chroma
 
 # ===========================
 # Vector Database
