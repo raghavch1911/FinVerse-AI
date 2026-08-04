@@ -14,7 +14,7 @@ const documentService = {
 
     const { data } =
       await api.get<DocumentsResponse>(
-        "/documents"
+        "/documents/"
       );
 
     return data.documents;

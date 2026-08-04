@@ -68,7 +68,7 @@ def import_transactions(
     )
 
 @router.get(
-    "/",
+    "",
     response_model=DocumentListResponse,
 )
 def get_documents(
