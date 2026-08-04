@@ -1,15 +1,12 @@
 import os
 
-import fitz  # PyMuPDF
+import fitz
 import easyocr
 
 
 class OCRTool:
     """
     Extract text from scanned PDFs and images.
-
-    Unsupported file types are skipped so the normal
-    DocumentLoader can handle them.
     """
 
     SUPPORTED_IMAGE_TYPES = {
@@ -24,10 +21,16 @@ class OCRTool:
         ".pdf",
     }
 
-    reader = easyocr.Reader(
-        ["en"],
-        gpu=False,
-    )
+    _reader = None
+
+    @classmethod
+    def get_reader(cls):
+        if cls._reader is None:
+            cls._reader = easyocr.Reader(
+                ["en"],
+                gpu=False,
+            )
+        return cls._reader
 
     @classmethod
     def extract_text(
@@ -39,16 +42,12 @@ class OCRTool:
             file_path
         )[1].lower()
 
-        # PDF
         if extension in cls.SUPPORTED_PDF_TYPES:
             return cls._extract_pdf(file_path)
 
-        # Images
         if extension in cls.SUPPORTED_IMAGE_TYPES:
             return cls._extract_image(file_path)
 
-        # TXT / DOCX / XLSX / CSV etc.
-        # Let DocumentLoader handle them.
         return ""
 
     @staticmethod
@@ -75,7 +74,9 @@ class OCRTool:
         file_path: str,
     ) -> str:
 
-        results = cls.reader.readtext(
+        reader = cls.get_reader()
+
+        results = reader.readtext(
             file_path,
             detail=0,
         )
