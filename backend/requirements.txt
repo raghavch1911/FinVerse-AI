@@ -3,7 +3,7 @@
 # ===========================
 fastapi==0.140.0
 uvicorn==0.51.0
-gunicorn
+gunicorn==23.0.0
 
 # ===========================
 # Database
@@ -24,6 +24,7 @@ python-multipart==0.0.32
 # Validation
 # ===========================
 pydantic==2.13.4
+pydantic-settings
 email-validator==2.3.0
 
 # ===========================
@@ -36,12 +37,10 @@ python-dotenv==1.2.2
 # ===========================
 langchain
 langchain-core
-langgraph
 langchain-community
-
-# ===========================
-# Google Gemini
-# ===========================
+langgraph
+langchain-openai
+langchain-groq
 langchain-google-genai
 
 # ===========================
@@ -50,14 +49,18 @@ langchain-google-genai
 chromadb
 
 # ===========================
-# Document Processing
+# AI / Embeddings
 # ===========================
-pypdf
-openpyxl
 sentence-transformers==5.1.0
 torch
+
+# ===========================
+# OCR & Document Processing
+# ===========================
 easyocr
 pymupdf
+pypdf
+openpyxl
 pillow
 
 # ===========================
