@@ -16,20 +16,17 @@ from routers.insights import router as insights_router
 from routers.chat import router as chat_router
 from routers.document_routes import router as document_router
 from routers.report import router as report_router
+from database.init_db import init_db
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    Application startup and shutdown events.
-
-    Use this lifecycle hook for future initialization such as:
-    - ChromaDB
-    - Redis
-    - Background workers
-    - AI model warm-up
-    """
     print("🚀 Starting FinVerse AI...")
+
+    # Create database tables if they don't exist
+    init_db()
+
+    print("✅ Database initialized.")
 
     yield
 
