@@ -43,6 +43,7 @@ langchain-openai
 langchain-groq
 langchain-google-genai
 langchain-chroma
+langchain-huggingface
 
 # ===========================
 # Vector Database
